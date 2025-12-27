@@ -26,96 +26,113 @@ Publish the website in the given URL.
 
 ## PROGRAM :
 ```
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Image Gallery</title> 
-<style> 
-         .gallery-container  
-{ 
-            position: relative; 
-            max-width: 600px; 
-            margin: auto; 
-            background: white; 
-            padding: 10px; 
-            border-radius: 10px; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-         } 
-         .gallery-image  
-{ 
-            width: 100%; 
-            height: 600px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-         } 
-         .caption  
-{ 
-            margin-top: 10px; 
-            font-size: 18px; 
-         } 
-         .gallery-buttons  
-{ 
-            display: flex; 
-            justify-content: space-between; 
-            margin-top: 15px; 
-         } 
-         button  
-{ 
-            padding: 10px 20px; 
-            cursor: pointer; 
-            border: none; 
-            border-radius: 5px; 
-            background-color: #007BFF; 
-            color: white; 
-            transition: 0.3s; 
-         } 
-     </style> 
-</head>  
-<body> 
-<div class="gallery-container"> 
-<img id="galleryImage" class="gallery-image" src="sundar.jpg" height="40%" width="40%"> 
-<div id="caption" class="caption">Caption for Image 1</div> 
-<div class="gallery-buttons"> 
-<button onclick="prevImage()">Previous</button> 
-<button onclick="nextImage()">Next</button> 
-</div> 
-</div> 
-<script> 
-const images = [ 
-{ src: "sundar.jp", caption: "Caption for Image 1" }, 
-{ src: "tata.jpg", caption: "Caption for Image 2" }, 
-{ src: "bill.jpg", caption: "Caption for Image 3" }, 
-{ src: "elon1.jpg", caption: "Caption for Image 4" } 
-]; 
-let currentIndex = 0; 
-function updateGallery( )  
-{ 
-document.getElementById("galleryImage").src = images[currentIndex].src; 
-document.getElementById("caption").textContent = images[currentIndex].caption; 
-} 
-function nextImage( )  
-{ 
-currentIndex = (currentIndex + 1) % images.length; 
-updateGallery( ); 
-} 
-function prevImage( )  
-{ 
-currentIndex = (currentIndex - 1 + images.length) % images.length; 
-updateGallery( ); 
-} 
-</script> 
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1> Image Gallery</h1>
+
+    <div class="gallery-container">
+        <img id="galleryImage" src="furniture.png" alt="Gallery Image">
+
+        <div class="buttons">
+            <button id="prevbutton">Previous</button>
+            <button id="nextbutton">Next</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>Designed & Developed by Priyadharshini S N © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+body {
+    font-family: italic,serif;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 22px;
+}
+
+.gallery-container {
+    width: 520px;
+    margin: 32px auto;
+    background: lightgoldenrodyellow;
+    padding: 13px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.buttons {
+    margin-top: 16px;
+}
+
+button {
+    padding: 12px 22px;
+    font-size: 18px;
+    margin: 7px;
+    border: none;
+    border-radius: 6px;
+    background-color: antiquewhite;
+    color: rgb(230, 130, 8);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:blue;
+}
+footer {
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    font-size: 14px;
+}
+const images = [
+    "robot.png",
+    "nature.png",
+    "space.png",
+    
+];
+
+let currentIndex = 0;
+
+const galleryImage = document.getElementById("galleryImage");
+const nextBtn = document.getElementById("nextbutton");
+const prevBtn = document.getElementById("prevbutton");
+
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    galleryImage.src = images[currentIndex];
+});
+
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    galleryImage.src = images[currentIndex];
+});
 ```
 
 ## OUTPUT:
-![screenshot  2025-12-27 at 3 13 54 PM](https://github.com/user-attachments/assets/45273bcb-038f-402c-86de-be12d42a2c51)
-![screenshot  2025-12-27 at 3 13 54 PM](https://github.com/user-attachments/assets/5c35214e-55a4-4f36-81c2-d7b14a454030)
-![screenshot  2025-12-27 at 3 13 54 PM](https://github.com/user-attachments/assets/5794d1f1-2436-4f73-958d-64fcfdfe9a72)
-![screenshot    2025-12-27 at 3 13 54 PM](https://github.com/user-attachments/assets/903bc0e0-c427-4f09-9534-ea8e8df0d91d)
-![screenshot    2025-12-27 at 3 13 54 PM](https://github.com/user-attachments/assets/579db8f5-a5ae-4e16-bbe6-e0d5e6c1a680)
+![WhatsApp Image 2025-12-27 at 5 35 06 PM](https://github.com/user-attachments/assets/285ae91f-4329-4d8c-b089-92f894b21aa7)
+![WhatsApp Image 2025-12-27 at 5 35 06 PM (1)](https://github.com/user-attachments/assets/1b51e83d-a515-498c-bac6-767f4107bee5)
+![WhatsApp Image 2025-12-27 at 5 35 06 PM (2)](https://github.com/user-attachments/assets/94954354-5ba1-4208-b81d-c4822b848a45)
+![WhatsApp Image 2025-12-27 at 5 35 05 PM](https://github.com/user-attachments/assets/8fee04cb-f6c8-4d8d-b574-5b70695ee321)
+
 
 
 ## RESULT:
